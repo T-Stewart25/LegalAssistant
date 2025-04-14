@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Voss-1234_MedicalHistory.physicians",
+    "text": "MedicalHistory.physicians: Mark D. Anderson",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.physicians",
+      "field": "",
+      "content": "Mark D. Anderson",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          2
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalHistory.physicians",
+    "text": "MedicalHistory.physicians: Rocky Mountain Multiple Sclerosis Clinic",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.physicians",
+      "field": "",
+      "content": "Rocky Mountain Multiple Sclerosis Clinic",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Voss-1234_WorkHistory.reason_for_leaving",
+    "text": "WorkHistory.reason_for_leaving: Unable to get work done when pain is high or during medication side effects, he has stopped working after trying reduced",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "WorkHistory.reason_for_leaving",
+      "field": "",
+      "content": "Unable to get work done when pain is high or during medication side effects, he has stopped working after trying reduced",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  }
+]

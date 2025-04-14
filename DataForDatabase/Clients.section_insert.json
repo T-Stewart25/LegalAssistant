@@ -1,0 +1,35 @@
+[
+  {
+    "id": "Voss-1234_Clients.section",
+    "text": "Clients.section: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "Clients.section",
+      "field": "",
+      "content": "Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          11,
+          23
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_Clients.section",
+    "text": "Clients.section: Functional Activities",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "Clients.section",
+      "field": "",
+      "content": "Functional Activities",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          12
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "Clients.name": {
+    "Christopher Voss": 14,
+    "Voss, Christopher": 7,
+    "Mr. Voss": 1
+  },
+  "Clients.birth_date": {
+    "11/25/1984": 5
+  },
+  "PersonalIdentifyingInformation.name": {
+    "Christopher Voss": 12,
+    "Voss, Christopher": 6,
+    "Mr. Voss": 1
+  },
+  "PersonalIdentifyingInformation.birth_date": {
+    "11/25/1984": 5
+  },
+  "MedicalHistory.diagnosis": {
+    "Multiple Sclerosis": 1,
+    "Multiple sclerosis (G35)": 1,
+    "Relapsing/Remitting Multiple Sclerosis": 1,
+    "Parathesias": 1,
+    "chronic pain": 1,
+    "muscle spasms": 1,
+    "and weakness": 1,
+    "MS symptoms": 1,
+    "neuropathy": 1,
+    "arm": 1,
+    "shoulder": 1,
+    "or hand problem": 1
+  },
+  "MedicalHistory.functional_assessments": {
+    "Functional Capacity Evaluation performed on 11/10/2022": 1,
+    "Functional Capacity Evaluation": 7,
+    "{\"activity_tolerances\": {\"sitting\": {\"consecutively\": \"25 minutes\", \"cumulatively_per_day\": \"Up to: 2\\u00bd hours (Occasional), 2 hours and 30 minutes (max)\"}, \"standing\": {\"consecutively\": \"10 minutes\", \"cumulatively_per_day\": \"Up to: 2\\u00bd hours (Occasional), 2 hours and 30 minutes (max)\"}, \"walking\": {\"consecutively\": \"8 minutes\", \"cumulatively_per_day\": \"Up to: 2\\u00bd hours (Occasional), 2 hours and 30 minutes (max)\"}}, \"cardio_respiratory_fitness\": \"Single-Stage Treadmill Walking Test: Estimated VO2max 40.92 ml/kg/min = Average Fitness Level (45th Percentile Rank)\", \"consistency_of_effort\": \"It is my professional opinion that Mr. Voss gave a consistent performance and effort during this functional capacity evaluation. The results of this evaluation are a valid representation of his current functional abilities. Signs of early and building fatigue with compensation in standing, leaning, or avoiding squat showed Lower Extremity limitations. Lift and exertion with Upper Extremity slowed and displayed a general reduced pace in what presented as building fatigue with activity.\", \"dynamic_lifts\": {\"floor_to_waist_lift\": \"maximal performance\", \"shoulder_to_overhead_lift\": \"maximal performance\", \"waist_to_shoulder_lift\": \"maximal performance\"}, \"grip_test\": {\"left\": \"maximal effort\", \"right\": \"maximal effort\"}, \"job_factor_restrictions\": [\"No lifting greater than 20 pounds occasionally from the floor to waist level.\", \"No lifting greater than 30 pounds occasionally from the waist to shoulder level.\", \"No lifting greater than 30 pounds occasionally above the shoulder.\", \"No carrying with both arms more than 10 pounds occasionally at waist level.\", \"No pushing activities exceeding 50 pounds occasionally.\", \"No pulling activities exceeding 50 pounds occasionally.\", \"Occasional positional balance activities on narrow, slippery, or erratically moving surfaces.\", \"Occasional stair climbing activities.\", \"Occasional ladder climbing activities.\", \"Frequent (non-repetitive) stooping activities.\", \"Occasional kneeling on either knee.\", \"Occasional kneeling on both knees simultaneously.\", \"Occasional crouching activities.\", \"Occasional foot control or movement activities with the right and left feet.\", \"Frequent (repetitive) activities consisting of firm power gripping, holding, or turning objects with the left hand.\", \"Occasional activities consisting of simple picking-up, squeezing and pinching small objects with the right and left fingers.\", \"Occasional fine motor activities that consist of picking-up small objects with the right and left fingers.\"], \"overall_strength_rating\": {\"heavy\": \"51-100 lbs\", \"light\": \"11-20 lbs (15 lbs max, 8 lbs max)\", \"medium\": \"21-50 lbs\", \"sedentary\": \"Up to 10 lbs\", \"very_heavy\": \"> 100 lbs\"}, \"psychosocial_screening\": [\"Disabilities of the Arm, Shoulder, and Hand: 41% Perceived Disability\", \"Lower Extremity Function Scale: 59% Perceived Disability\"]}": 1,
+    "{\"physical_demand_capabilities\": {\"date_of_test\": \"11/10/2022\", \"job_activities\": {\"balancing_dynamic\": null, \"balancing_static\": null, \"climbing_ladders\": null, \"climbing_stairs\": null, \"crawling_on_hands_feet\": null, \"crawling_on_hands_knees\": null, \"crouching_squatting\": null, \"fingering_left\": {\"fine_motor_dexterity\": null, \"simple_picking_pinching\": null}, \"fingering_right\": {\"fine_motor_dexterity\": null, \"simple_picking_pinching\": null}, \"foot_control_left\": null, \"foot_control_right\": null, \"handling_left\": {\"firm_power_grasp\": null, \"simple_grasping_turning\": null}, \"handling_right\": {\"firm_power_grasp\": null, \"simple_grasping_turning\": null}, \"kneel_on_1_knee\": null, \"kneel_on_both_knees\": null, \"reaching_left_arm\": null, \"reaching_right_arm\": null, \"sitting\": null, \"standing\": null, \"stooping\": null, \"walking\": null}, \"overall_strength\": {\"combined_lift_carry\": {\"constant\": \"negligible\", \"frequent\": \"8 lbs\", \"occasional\": \"15 lbs\"}, \"floor_to_waist_lift\": {\"constant\": \"negligible\", \"frequent\": \"10 lbs\", \"occasional\": \"20 lbs\"}, \"front_arm_carry_both_hands\": {\"constant\": \"negligible\", \"frequent\": \"negligible\", \"occasional\": \"10 lbs\"}, \"pulling\": {\"constant\": \"10 lbs\", \"frequent\": \"25 lbs\", \"occasional\": \"50 lbs\"}, \"pushing\": {\"constant\": \"10 lbs\", \"frequent\": \"25 lbs\", \"occasional\": \"50 lbs\"}, \"shoulder_to_overhead_lift\": {\"constant\": \"6 lbs\", \"frequent\": \"15 lbs\", \"occasional\": \"30 lbs\"}, \"waist_to_shoulder_lift\": {\"constant\": \"6 lbs\", \"frequent\": \"15 lbs\", \"occasional\": \"30 lbs\"}}}}": 1,
+    "Functional Capacity Evaluation (FCE)": 1,
+    "{\"LEFS\": {\"disability_rating\": \"59%\"}, \"QuickDASH\": {\"overall_disability_rating\": \"41%\", \"sports_performing_arts_module_disability_rating\": \"88%\", \"work_module_disability_rating\": \"56%\"}}": 1,
+    "Mr. Voss was able to lift and carry up to 15 pounds. Therefore": 1,
+    "he is capable of exerting up to 15 pounds of force occasionally": 1,
+    "and/or up to 8 pounds of force frequently": 1,
+    "and/or a negligible amount of force constantly to move objects. He may be able to lift greater weight but not in a safe and dependable manner. Comments: Good lift form in lift and carry": 1,
+    "good pace through 12 reps at 20+ lbs": 1,
+    "stands and pumps legs and bends knees in recovery": 1,
+    "braces over knees in flexed posture": 1,
+    "crouching as well in recovery fashion": 1,
+    "notes symptoms mostly noted after exertion rather than current activity": 1,
+    "building fatigue after task": 1,
+    "HEART RATE: Pre HR = 90": 1,
+    "Max HR = 130. BORG SCALE: Subject's rating of weight (RPE) = 13/20 (somewhat hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical). Mr. Voss was able to lift 20 pounds from floor to waist level. Mr. Voss may be able to lift greater weight but not in a safe and dependable manner. Comments: Fatigue noted after lifting and knees achy": 1,
+    "good form in squat lift": 1,
+    "building fatigue": 1,
+    "crouch to get to heavier weight noted a leg give out sensation": 1,
+    "long pause between lifts to recover in legs": 1,
+    "HEART RATE: Max HR = 122. BORG SCALE: Subject's rating of weight (RPE) = 14/20 (somewhat hard to hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).": 1,
+    "Functional Capacity Evaluation - Voss": 1,
+    "Christopher - 11/10/2022": 1,
+    "Pulling Test: Mr. Voss was only able to pull 50 pounds and thus did not meet the demand minimal functional capacity of 80 pounds. Comments: The subject was limited by pain": 1,
+    "decreased mobility and weakness. END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical). Standing Balance Test: Mr. Voss was able to stand on a narrow beam for 30 seconds without difficulty. Comments: Shaky": 1,
+    "sways some": 1,
+    "but does not lose balance. Walking Balance Test: Mr. Voss was able to walk on a narrow beam for 6 feet (1.8 meters) without difficulty. Crouching Balance Test: Mr. Voss was able to crouch and balance himself on a narrow beam for 30 seconds but had difficulty with the task. Comments: L leg tremors and building fatigue within 30 sec": 1,
+    "HEART RATE: Max HR = 103. BORG SCALE: Subject's rating of weight (RPE) = 16/20 (hard to very hard).": 1,
+    "{\"crouching_test\": {\"comments\": \"Able to squat into full flexion, but difficult to squat dynamic and fatigue in legs that gives out at 20 sec, increasing symptoms in LE with time BORG SCALE: Subject's rating of weight (RPE) = 20/20 (maximal exertion)\", \"functional_category\": null, \"percentile_rank\": null, \"score\": null}, \"forward_bend_test\": {\"comments\": null, \"functional_category\": \"Below Average\", \"percentile_rank\": \"36th\", \"score\": \"15 seconds\"}, \"kneeling_both_knees_test\": {\"comments\": \"Difficulty getting up from floor after kneeling, poor balance\", \"functional_category\": null, \"percentile_rank\": null, \"score\": null}, \"kneeling_one_knee_test\": {\"comments\": \"Difficulty getting up from floor after kneeling, poor balance\", \"functional_category\": null, \"percentile_rank\": null, \"score\": null}, \"repetitive_squat_test\": {\"comments\": null, \"functional_category\": null, \"percentile_rank\": null, \"score\": null}}": 1,
+    "{\"foot_control_left\": {\"comments\": \"L side more fatiguing and LE give out BORG SCALE: Subject's rating of weight (RPE) = 20/20 (maximal exertion)\", \"test_results\": \"able to complete the task with the left foot but had difficulty\"}, \"hand_dexterity\": {\"grip_strength\": {\"left_grip\": \"102 pounds (46.3 kg), 0% deficit, 63rd percentile, Above Average\", \"right_grip\": \"130 pounds (59.0 kg), 0% deficit, 82nd percentile, Well Above Average\"}, \"picking_up_small_objects\": {\"fingering\": \"able to meet the demand minimal functional capacity of picking up a small nut with all fingers using the right and left hands without difficulty\"}, \"seizing_holding_grasping_turning\": {\"left_hand\": \"able to successfully seize, hold, grasp and turn several small objects without difficulty\", \"right_hand\": \"able to successfully seize, hold, grasp and turn several small objects without difficulty\"}}}": 1,
+    "{\"Purdue Pegboard Test\": {\"left_hand\": {\"functional_category\": \"Well Below Average\", \"percentile_rank\": \"4th\", \"score\": \"10 Pins\"}, \"right_hand\": {\"functional_category\": \"Well Below Average\", \"percentile_rank\": \"18th\", \"score\": \"12.7 Pins\"}}, \"Single-Stage Treadmill Walking Test\": {\"VO2_max\": \"40.92 ml/kg/min\", \"comments\": \"Walking with L side limp, touching TM and equipment for stability, notes instability and discomfort on TM because of instabilities, No R arm swing, focuses with forward gaze in order not to lose balance or stumble with walking, talking to me during time on TM was distracting to his gait and\", \"fitness_level\": \"Average Cardio-Respiratory Fitness Level\", \"maximum_heart_rate\": \"70 bpm\", \"percentile_rank\": \"45th\", \"resting_heart_rate\": \"65 bpm\", \"speed\": \"2.5 mph\"}}": 1,
+    "Disabilities of the Arm": 1,
+    "Shoulder": 1,
+    "and Hand: 41% Perceived Disability": 1,
+    "Lower Extremity Function Scale: 59% Perceived Disability": 1,
+    "Cardio-Respiratory Fitness Level: Average": 1,
+    "45th Percentile Rank": 1,
+    "['residual functional capacity', 'functional capacity evaluation', 'Lower Extremity Functional Scale (LEFS)', 'Dynamic (Repetitive) Forward Bending Test', 'Repetitive Squat Test']": 1,
+    "Patient's Perceived Disability: 41%": 1,
+    "Lower Extremity Functional Scale": 1,
+    "['Functional Pain Scale', 'Numerical Pain Scale', 'BORG: 1-10 Scale', 'BORG: 6-20 Scale']": 1
+  },
+  "MedicalHistory.physicians": {
+    "Mark D. Anderson": 1,
+    "Rocky Mountain Multiple Sclerosis Clinic": 1
+  },
+  "PersonalIdentifyingInformation.social_security_number": {
+    "N/A": 2
+  },
+  "MedicalHistory.treatment": {
+    "Chiro care, medical marijuana for sleep, MS meds, infusions, pain medication": 1
+  },
+  "MedicalHistory.medications": {
+    "MS meds": 1,
+    "pain medication": 1,
+    "Non-contributory": 1
+  },
+  "MedicalHistory.imaging_results": {
+    "MRI showing lesions consistent with MS": 1
+  },
+  "WorkHistory.job_title": {
+    "Architect": 1
+  },
+  "WorkHistory.reason_for_leaving": {
+    "Unable to get work done when pain is high or during medication side effects, he has stopped working after trying reduced": 1
+  },
+  "EducationHistory.field_of_study": {
+    "Architecture": 1
+  },
+  "MedicalHistory.allergies": {
+    "No known drug allergies": 1
+  },
+  "MedicalHistory.surgeries": {
+    "Non-contributory": 1
+  },
+  "Clients.section": {
+    "Functional Capacity Evaluation": 2,
+    "Functional Activities": 1
+  },
+  "MedicalHistory.therapists": {
+    "Mark D. Anderson": 1
+  }
+}

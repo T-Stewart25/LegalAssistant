@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Voss-1234_MedicalHistory.allergies",
+    "text": "MedicalHistory.allergies: No known drug allergies",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.allergies",
+      "field": "",
+      "content": "No known drug allergies",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          6
+        ]
+      }
+    }
+  }
+]

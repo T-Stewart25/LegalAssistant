@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Voss-1234_WorkHistory.job_title",
+    "text": "WorkHistory.job_title: Architect",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "WorkHistory.job_title",
+      "field": "",
+      "content": "Architect",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  }
+]

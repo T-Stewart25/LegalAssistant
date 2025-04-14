@@ -1,0 +1,165 @@
+.right-sidebar {
+  padding: 20px;
+  background-color: #343a40; /* Dark background to match left sidebar */
+  color: #f8f9fa; /* Light text color */
+  height: calc(100vh - 60px); /* Full height minus header */
+  overflow-y: auto; /* Scroll if content overflows */
+  box-sizing: border-box;
+  width: 280px; /* Fixed width based on image */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.sidebar-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-section h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #ffffff; /* White heading */
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 1px solid #495057; /* Subtle separator */
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Add info icon for section headings */
+.sidebar-section h4::after {
+  content: "ⓘ";
+  margin-left: 8px;
+  font-size: 0.9em;
+  color: #adb5bd;
+  cursor: help;
+}
+
+/* Tooltip for section headings */
+.section-tooltip {
+  position: absolute;
+  background-color: #212529;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  max-width: 250px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.sidebar-section h4:hover .section-tooltip {
+  display: block;
+}
+
+.right-sidebar select {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #495057; /* Darker select */
+  color: #ffffff; /* White text */
+  font-size: 0.9em;
+}
+
+.prompt-button,
+.theory-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between text and checkmark */
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left; /* Align text left */
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+
+/* Add plus icon to prompt buttons */
+.prompt-button::before {
+  content: '+';
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Style for selected prompts */
+.prompt-button.selected {
+  background-color: #6c757d; /* Gray out when selected */
+  opacity: 0.8;
+}
+
+.prompt-button.selected::before {
+  content: ''; /* Remove plus sign when selected */
+}
+
+/* Checkmark for selected prompts */
+.selected-indicator {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.prompt-button:hover,
+.theory-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.prompt-button.selected:hover {
+  background-color: #5a6268; /* Darker gray on hover when selected */
+}
+
+.document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.document-list li {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background-color: #495057; /* Darker background */
+  color: #e9ecef; /* Light text */
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.document-list li:hover {
+  background-color: #6c757d; /* Lighter on hover */
+}
+
+/* Add update project notice at bottom */
+.update-project-notice {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #212529; /* Even darker background */
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.update-project-notice p {
+  margin: 0 0 10px 0;
+  font-size: 0.9em;
+}
+
+.update-project-notice button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.update-project-notice button:hover {
+  background-color: #0056b3;
+}

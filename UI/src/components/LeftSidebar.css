@@ -1,0 +1,104 @@
+.left-sidebar {
+  padding: 20px;
+  background-color: #343a40; /* Dark background for better contrast */
+  color: #f8f9fa; /* Light text color */
+  height: calc(100vh - 60px); /* Full height minus header */
+  overflow-y: auto; /* Scroll if content overflows */
+  box-sizing: border-box;
+}
+
+.left-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #ffffff; /* White text for headings */
+  font-weight: 600;
+  border-bottom: 1px solid #495057; /* Subtle separator */
+  padding-bottom: 8px;
+}
+
+.add-source-btn,
+.add-note-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  background-color: #495057; /* Darker button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.add-source-btn:hover,
+.add-note-btn:hover {
+  background-color: #6c757d; /* Lighter on hover */
+}
+
+/* Add plus icon */
+.add-source-btn::before,
+.add-note-btn::before {
+  content: '+';
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.source-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0; /* Add margin below the list */
+}
+
+.source-list li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.source-list li:hover {
+  background-color: #495057; /* Highlight on hover */
+}
+
+.source-list li.has-data {
+  position: relative;
+}
+
+.source-list li input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #007bff; /* Blue checkbox */
+}
+
+.source-list li label {
+  flex-grow: 1;
+  cursor: pointer; /* Make label clickable */
+  color: #ffffff; /* White text for better contrast */
+  font-weight: 500; /* Medium weight for better visibility */
+  font-size: 1em; /* Slightly larger */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-indicator {
+  color: #28a745; /* Green dot for available data */
+  font-size: 1.2em;
+  margin-left: 5px;
+}
+
+.notes-area {
+  margin-top: 15px;
+  color: #adb5bd; /* Lighter grey text for placeholder */
+  font-size: 0.9em;
+  border-top: 1px solid #495057;
+  padding-top: 15px;
+}

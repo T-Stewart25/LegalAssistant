@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Voss-1234_EducationHistory.field_of_study",
+    "text": "EducationHistory.field_of_study: Architecture",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "EducationHistory.field_of_study",
+      "field": "",
+      "content": "Architecture",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  }
+]

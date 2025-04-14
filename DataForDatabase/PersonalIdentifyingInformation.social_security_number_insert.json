@@ -1,0 +1,19 @@
+[
+  {
+    "id": "Voss-1234_PersonalIdentifyingInformation.social_security_number",
+    "text": "PersonalIdentifyingInformation.social_security_number: N/A",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "PersonalIdentifyingInformation.social_security_number",
+      "field": "",
+      "content": "N/A",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    }
+  }
+]

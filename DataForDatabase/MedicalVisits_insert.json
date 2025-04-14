@@ -1,0 +1,357 @@
+[
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Estimate residual functional capacity; notes: Mr. Voss is capable of assuming a position in a LIGHT physical demand level. Mr. Voss is capable of exerting up to a maximum of 15 pounds of force occasionally throughout the workday with frequent lifting or carrying objects weighing 8 pounds. However, in order for Mr. Voss to successfully work in a light physical demand level, job factor restriction(s) must be met. Signs of early and building fatigue with compensation in standing, leaning, or avoiding squat showed Lower Extremity limitations. Lift and exertion with Upper Extremity slowed and displayed a general reduced pace in what presented as building fatigue with activity.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Estimate residual functional capacity; notes: Mr. Voss is capable of assuming a position in a LIGHT physical demand level. Mr. Voss is capable of exerting up to a maximum of 15 pounds of force occasionally throughout the workday with frequent lifting or carrying objects weighing 8 pounds. However, in order for Mr. Voss to successfully work in a light physical demand level, job factor restriction(s) must be met. Signs of early and building fatigue with compensation in standing, leaning, or avoiding squat showed Lower Extremity limitations. Lift and exertion with Upper Extremity slowed and displayed a general reduced pace in what presented as building fatigue with activity.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          1
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Mark D. Anderson; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss gave a full effort on this exam and that this Functional Capacity Evaluation is an accurate representation of his current functional abilities.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Mark D. Anderson; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss gave a full effort on this exam and that this Functional Capacity Evaluation is an accurate representation of his current functional abilities.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          2
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Mark D. Anderson, PT, MPT, OSC; reason_for_visit: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Mark D. Anderson, PT, MPT, OSC; reason_for_visit: Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          3
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Tom Stewart; location: Stewart Disability, 13791 E. Rice Place, Aurora, CO 80015; reason_for_visit: Estimate residual functional capacity; notes: Early symptoms of MS Nov 2019 such as low back pain, R then L lower extremity numbness that was moving up from feet to spine. These early symptoms worsened which kept him from driving for 8 months. He reported a number of times to the ER as symptoms worsened, but covid shut everything down so he was left with minimal Techniques or treatments. He focused on diet, breathing exercises, relaxation, etc as his options were limited. March 2020 Dx of MS was confirmed after symptoms increased in head and neck, balance, and gait were greatly affected (weakness, pain, and fatigue), then followed by a positive MRI showing lesions consistent with MS. EMG was completed for both upper extremities but without known findings. Treatment consisted of chiro care in the past, medical marijuana for sleep, MS meds, infusions, pain medication.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Tom Stewart; location: Stewart Disability, 13791 E. Rice Place, Aurora, CO 80015; reason_for_visit: Estimate residual functional capacity; notes: Early symptoms of MS Nov 2019 such as low back pain, R then L lower extremity numbness that was moving up from feet to spine. These early symptoms worsened which kept him from driving for 8 months. He reported a number of times to the ER as symptoms worsened, but covid shut everything down so he was left with minimal Techniques or treatments. He focused on diet, breathing exercises, relaxation, etc as his options were limited. March 2020 Dx of MS was confirmed after symptoms increased in head and neck, balance, and gait were greatly affected (weakness, pain, and fatigue), then followed by a positive MRI showing lesions consistent with MS. EMG was completed for both upper extremities but without known findings. Treatment consisted of chiro care in the past, medical marijuana for sleep, MS meds, infusions, pain medication.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Voss, Christopher; reason_for_visit: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Voss, Christopher; reason_for_visit: Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          6
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss performed this Functional Capacity Evaluation to determine his overall functional capacities.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss performed this Functional Capacity Evaluation to determine his overall functional capacities.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          7
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          8,
+          20
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift and carry up to 15 pounds. Therefore, he is capable of exerting up to 15 pounds of force occasionally, and/or up to 8 pounds of force frequently, and/or a negligible amount of force constantly to move objects. He may be able to lift greater weight but not in a safe and dependable manner. Comments: Good lift form in lift and carry, good pace through 12 reps at 20+ lbs, stands and pumps legs and bends knees in recovery, braces over knees in flexed posture, crouching as well in recovery fashion, notes symptoms mostly noted after exertion rather than current activity, building fatigue after task, HEART RATE: Pre HR = 90, Max HR = 130. BORG SCALE: Subject's rating of weight (RPE) = 13/20 (somewhat hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical). Mr. Voss was able to lift 20 pounds from floor to waist level. Mr. Voss may be able to lift greater weight but not in a safe and dependable manner. Comments: Fatigue noted after lifting and knees achy, good form in squat lift, building fatigue, crouch to get to heavier weight noted a leg give out sensation, long pause between lifts to recover in legs, HEART RATE: Max HR = 122. BORG SCALE: Subject's rating of weight (RPE) = 14/20 (somewhat hard to hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift and carry up to 15 pounds. Therefore, he is capable of exerting up to 15 pounds of force occasionally, and/or up to 8 pounds of force frequently, and/or a negligible amount of force constantly to move objects. He may be able to lift greater weight but not in a safe and dependable manner. Comments: Good lift form in lift and carry, good pace through 12 reps at 20+ lbs, stands and pumps legs and bends knees in recovery, braces over knees in flexed posture, crouching as well in recovery fashion, notes symptoms mostly noted after exertion rather than current activity, building fatigue after task, HEART RATE: Pre HR = 90, Max HR = 130. BORG SCALE: Subject's rating of weight (RPE) = 13/20 (somewhat hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical). Mr. Voss was able to lift 20 pounds from floor to waist level. Mr. Voss may be able to lift greater weight but not in a safe and dependable manner. Comments: Fatigue noted after lifting and knees achy, good form in squat lift, building fatigue, crouch to get to heavier weight noted a leg give out sensation, long pause between lifts to recover in legs, HEART RATE: Max HR = 122. BORG SCALE: Subject's rating of weight (RPE) = 14/20 (somewhat hard to hard). END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          9
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift 30 pounds from waist to shoulder level and from shoulder level to overhead level. He may be able to lift greater weight but not in a safe and dependable manner. Comments: Avoids bending legs to get weight, legs very fatigued, bends over flexing knees, upper body seems better than LE in task, able to lift upper body at 30 lbs, HEART RATE: Max HR = 94. BORG SCALE: Subject's rating of weight (RPE) = 12/20 (light to somewhat hard). END POINT: Subject Reached a Safe Max Weight (biomechanical).",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift 30 pounds from waist to shoulder level and from shoulder level to overhead level. He may be able to lift greater weight but not in a safe and dependable manner. Comments: Avoids bending legs to get weight, legs very fatigued, bends over flexing knees, upper body seems better than LE in task, able to lift upper body at 30 lbs, HEART RATE: Max HR = 94. BORG SCALE: Subject's rating of weight (RPE) = 12/20 (light to somewhat hard). END POINT: Subject Reached a Safe Max Weight (biomechanical).",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          10
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift 10 pounds with both arms. He may be able to carry greater weight but not in a safe and dependable manner. Comments: Fatigue in B LE cause sloppy walking and give out when setting down weight at 15 lbs, uses equipment to right himself to stand after carry, unsteady with increased weight, BORG SCALE: Subject's rating of weight (RPE) = 15/20 (hard/heavy). HEART RATE: Max HR = 111. END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to lift 10 pounds with both arms. He may be able to carry greater weight but not in a safe and dependable manner. Comments: Fatigue in B LE cause sloppy walking and give out when setting down weight at 15 lbs, uses equipment to right himself to stand after carry, unsteady with increased weight, BORG SCALE: Subject's rating of weight (RPE) = 15/20 (hard/heavy). HEART RATE: Max HR = 111. END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          10
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was only able to push 50 pounds and thus did not meet the demand minimal functional capacity of 100 pounds. Comments: The subject was limited by pain, decreased mobility and weakness. END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was only able to push 50 pounds and thus did not meet the demand minimal functional capacity of 100 pounds. Comments: The subject was limited by pain, decreased mobility and weakness. END POINT: Unsafe/Overload body mechanics; so the adjusted recommended safe max weight was established (biomechanical).",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          10
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          11,
+          13
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Stair Climbing Test: Mr. Voss was able to ascend and descend one flight of stairs but had difficulty with the task. Comments: Varies, starts strong but fatigue reduces consistency and increased use of rail for both up/down, does resort to foot to foot with fatigue. Climbing Ladder Test: Mr. Voss was able to ascend and descend a ladder 3 times. Stooping Test: Mr. Voss was able to stoop greater than 75 degrees without difficulty.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Stair Climbing Test: Mr. Voss was able to ascend and descend one flight of stairs but had difficulty with the task. Comments: Varies, starts strong but fatigue reduces consistency and increased use of rail for both up/down, does resort to foot to foot with fatigue. Climbing Ladder Test: Mr. Voss was able to ascend and descend a ladder 3 times. Stooping Test: Mr. Voss was able to stoop greater than 75 degrees without difficulty.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          12
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to repetitively squat 9 times. This score is Well Below Average and places him in the 2nd percentile when compared to normative data. Comments: Slows pace, fatigue and pain in LE increasing with time and unable to keep up with metrinome. Braces over knees to recovery. BORG SCALE: Subject's rating of weight (RPE) = 17/20 (very hard). HEART RATE: Max HR = 128. Mr. Voss was able to crawl on hands and knees for 6 feet (1.8 meters) without difficulty. Mr. Voss was able to crawl on hands and feet for 6 feet (1.8 meters) without difficulty. Mr. Voss was able to complete the task with the right arm without difficulty. Mr. Voss was able to complete the task with the left arm without difficulty. Mr. Voss was able to complete the task with the right foot but had difficulty with the task.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss was able to repetitively squat 9 times. This score is Well Below Average and places him in the 2nd percentile when compared to normative data. Comments: Slows pace, fatigue and pain in LE increasing with time and unable to keep up with metrinome. Braces over knees to recovery. BORG SCALE: Subject's rating of weight (RPE) = 17/20 (very hard). HEART RATE: Max HR = 128. Mr. Voss was able to crawl on hands and knees for 6 feet (1.8 meters) without difficulty. Mr. Voss was able to crawl on hands and feet for 6 feet (1.8 meters) without difficulty. Mr. Voss was able to complete the task with the right arm without difficulty. Mr. Voss was able to complete the task with the left arm without difficulty. Mr. Voss was able to complete the task with the right foot but had difficulty with the task.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          14
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; notes: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; notes: Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          15,
+          16
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss gave a consistent performance and effort during this functional capacity evaluation. The results of this evaluation are a valid representation of his current functional abilities. Signs of early and building fatigue with compensation in standing, leaning, or avoiding squat showed Lower Extremity limitations. Lift and exertion with Upper Extremity slowed and displayed a general reduced pace in what presented as building fatigue with activity. Coefficient of Variation (CV) Grip Test: Right hand test scores are 95, 90, and 96 pounds. Left hand test scores are 102, 94, and 86 pounds. Mr. Voss scored a 2.8% CV on the right hand suggesting maximal effort. Mr. Voss scored a 6.95% CV on the left hand suggesting maximal effort. Dynamic Lifts Heart Rate Response (DLHRR) Test: This test measures the subject's heart rate response during safe-maximal and submaximal efforts during a specific Functional Capacity lift task.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss gave a consistent performance and effort during this functional capacity evaluation. The results of this evaluation are a valid representation of his current functional abilities. Signs of early and building fatigue with compensation in standing, leaning, or avoiding squat showed Lower Extremity limitations. Lift and exertion with Upper Extremity slowed and displayed a general reduced pace in what presented as building fatigue with activity. Coefficient of Variation (CV) Grip Test: Right hand test scores are 95, 90, and 96 pounds. Left hand test scores are 102, 94, and 86 pounds. Mr. Voss scored a 2.8% CV on the right hand suggesting maximal effort. Mr. Voss scored a 6.95% CV on the left hand suggesting maximal effort. Dynamic Lifts Heart Rate Response (DLHRR) Test: This test measures the subject's heart rate response during safe-maximal and submaximal efforts during a specific Functional Capacity lift task.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          17
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Floor to Waist Lift: Mr. Voss had a heart rate change of 88% for the floor to waist lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques. Waist to Shoulder Lift: Mr. Voss had a heart rate change of 45% for the waist to shoulder lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques. Shoulder to Overhead Lift: Mr. Voss had a heart rate change of 78% for the shoulder to overhead lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Floor to Waist Lift: Mr. Voss had a heart rate change of 88% for the floor to waist lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques. Waist to Shoulder Lift: Mr. Voss had a heart rate change of 45% for the waist to shoulder lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques. Shoulder to Overhead Lift: Mr. Voss had a heart rate change of 78% for the shoulder to overhead lift demonstrating a maximal performance during the test. He did use safe biomechanical and physiological lifting techniques.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          18
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss is capable of assuming a position in a LIGHT physical demand level. Mr. Voss is capable of exerting up to a maximum of 15 pounds of force occasionally throughout the workday with frequent lifting or carrying objects weighing 8 pounds. Mr. Voss may be capable of lifting and/or carrying greater weight than recommended in this report (should the necessity arise at work or home). However, Mr. Voss may not be safe performing the tasks repetitively over a period of time, and thus may put himself at increased risk of injury or further trauma.; recommendations: Job Factor Restrictions: No lifting greater than 20 pounds occasionally from the floor to waist level. No lifting greater than 30 pounds occasionally from the waist to shoulder level. No lifting greater than 30 pounds occasionally above the shoulder. No carrying with both arms more than 10 pounds occasionally at waist level. No pushing activities exceeding 50 pounds occasionally (6-33% of the time or 3-12 repetitions per hour). No pulling activities exceeding 50 pounds occasionally (6-33% of the time or 3-12 repetitions per hour). Occasional (non-repetitive) positional balance activities (maintaining awkward positions such as crouching, squatting, or stooping on narrow, slippery, or erratically moving surfaces, 6-33% of the time). Occasional (non-repetitive) stair climbing activities (6-33% of the time or 3-12 steps per hour). Occasional (non-repetitive) ladder climbing activities (6-33% of the time or 3-12 repetitions per hour).",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Functional Capacity Evaluation; notes: Mr. Voss is capable of assuming a position in a LIGHT physical demand level. Mr. Voss is capable of exerting up to a maximum of 15 pounds of force occasionally throughout the workday with frequent lifting or carrying objects weighing 8 pounds. Mr. Voss may be capable of lifting and/or carrying greater weight than recommended in this report (should the necessity arise at work or home). However, Mr. Voss may not be safe performing the tasks repetitively over a period of time, and thus may put himself at increased risk of injury or further trauma.; recommendations: Job Factor Restrictions: No lifting greater than 20 pounds occasionally from the floor to waist level. No lifting greater than 30 pounds occasionally from the waist to shoulder level. No lifting greater than 30 pounds occasionally above the shoulder. No carrying with both arms more than 10 pounds occasionally at waist level. No pushing activities exceeding 50 pounds occasionally (6-33% of the time or 3-12 repetitions per hour). No pulling activities exceeding 50 pounds occasionally (6-33% of the time or 3-12 repetitions per hour). Occasional (non-repetitive) positional balance activities (maintaining awkward positions such as crouching, squatting, or stooping on narrow, slippery, or erratically moving surfaces, 6-33% of the time). Occasional (non-repetitive) stair climbing activities (6-33% of the time or 3-12 steps per hour). Occasional (non-repetitive) ladder climbing activities (6-33% of the time or 3-12 repetitions per hour).",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          19
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Christopher Voss",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Christopher Voss",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          22
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; physician: Christopher Voss; reason_for_visit: Functional Capacity Evaluation",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; physician: Christopher Voss; reason_for_visit: Functional Capacity Evaluation",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          23
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: arm, shoulder or hand problem; notes: Difficulty with activities such as opening a jar, doing heavy household chores, carrying a shopping bag, washing back, using a knife to cut food, recreational activities, social activities, work or regular daily activities, arm, shoulder or hand pain, tingling in arm, shoulder or hand, difficulty sleeping because of pain.",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: arm, shoulder or hand problem; notes: Difficulty with activities such as opening a jar, doing heavy household chores, carrying a shopping bag, washing back, using a knife to cut food, recreational activities, social activities, work or regular daily activities, arm, shoulder or hand pain, tingling in arm, shoulder or hand, difficulty sleeping because of pain.",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          24
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalVisits",
+    "text": "MedicalVisits: date: 11/10/2022; reason_for_visit: Lower limb problem; notes: Patient's Perceived Disability: 59%",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalVisits",
+      "field": "",
+      "content": "date: 11/10/2022; reason_for_visit: Lower limb problem; notes: Patient's Perceived Disability: 59%",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          26
+        ]
+      }
+    }
+  }
+]

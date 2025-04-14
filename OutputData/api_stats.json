@@ -1,0 +1,198 @@
+[
+  {
+    "worker": 2,
+    "page_number": 1,
+    "file_name": "fallback.pdf",
+    "duration": 29.87,
+    "char_count": 12086
+  },
+  {
+    "worker": 1,
+    "page_number": 2,
+    "file_name": "fallback.pdf",
+    "duration": 15.41,
+    "char_count": 2365
+  },
+  {
+    "worker": 2,
+    "page_number": 3,
+    "file_name": "fallback.pdf",
+    "duration": 37.47,
+    "char_count": 17985
+  },
+  {
+    "worker": 1,
+    "page_number": 4,
+    "file_name": "fallback.pdf",
+    "duration": 34.16,
+    "char_count": 7073
+  },
+  {
+    "worker": 2,
+    "page_number": 5,
+    "file_name": "fallback.pdf",
+    "duration": 26.07,
+    "char_count": 8531
+  },
+  {
+    "worker": 1,
+    "page_number": 6,
+    "file_name": "fallback.pdf",
+    "duration": 17.04,
+    "char_count": 12358
+  },
+  {
+    "worker": 2,
+    "page_number": 7,
+    "file_name": "fallback.pdf",
+    "duration": 23.75,
+    "char_count": 14391
+  },
+  {
+    "worker": 1,
+    "page_number": 8,
+    "file_name": "fallback.pdf",
+    "duration": 15.79,
+    "char_count": 13273
+  },
+  {
+    "worker": 2,
+    "page_number": 9,
+    "file_name": "fallback.pdf",
+    "duration": 30.39,
+    "char_count": 14761
+  },
+  {
+    "worker": 1,
+    "page_number": 10,
+    "file_name": "fallback.pdf",
+    "duration": 27.99,
+    "char_count": 15043
+  },
+  {
+    "worker": 2,
+    "page_number": 11,
+    "file_name": "fallback.pdf",
+    "duration": 28.03,
+    "char_count": 11225
+  },
+  {
+    "worker": 1,
+    "page_number": 12,
+    "file_name": "fallback.pdf",
+    "duration": 19.13,
+    "char_count": 14204
+  },
+  {
+    "worker": 2,
+    "page_number": 13,
+    "file_name": "fallback.pdf",
+    "duration": 24.92,
+    "char_count": 12572
+  },
+  {
+    "worker": 1,
+    "page_number": 14,
+    "file_name": "fallback.pdf",
+    "duration": 19.38,
+    "char_count": 13067
+  },
+  {
+    "worker": 2,
+    "page_number": 15,
+    "file_name": "fallback.pdf",
+    "duration": 22.52,
+    "char_count": 12770
+  },
+  {
+    "worker": 1,
+    "page_number": 16,
+    "file_name": "fallback.pdf",
+    "duration": 22.77,
+    "char_count": 16320
+  },
+  {
+    "worker": 2,
+    "page_number": 17,
+    "file_name": "fallback.pdf",
+    "duration": 22.64,
+    "char_count": 15146
+  },
+  {
+    "worker": 1,
+    "page_number": 18,
+    "file_name": "fallback.pdf",
+    "duration": 19.5,
+    "char_count": 4176
+  },
+  {
+    "worker": 2,
+    "page_number": 19,
+    "file_name": "fallback.pdf",
+    "duration": 24.93,
+    "char_count": 10256
+  },
+  {
+    "worker": 1,
+    "page_number": 20,
+    "file_name": "fallback.pdf",
+    "duration": 30.04,
+    "char_count": 10541
+  },
+  {
+    "worker": 2,
+    "page_number": 21,
+    "file_name": "fallback.pdf",
+    "duration": 38.6,
+    "char_count": 15799
+  },
+  {
+    "worker": 1,
+    "page_number": 22,
+    "file_name": "fallback.pdf",
+    "duration": 23.59,
+    "char_count": 16396
+  },
+  {
+    "worker": 2,
+    "page_number": 23,
+    "file_name": "fallback.pdf",
+    "duration": 17.45,
+    "char_count": 6806
+  },
+  {
+    "worker": 1,
+    "page_number": 24,
+    "file_name": "fallback.pdf",
+    "duration": 16.43,
+    "char_count": 6316
+  },
+  {
+    "worker": 2,
+    "page_number": 25,
+    "file_name": "fallback.pdf",
+    "duration": 15.2,
+    "char_count": 8378
+  },
+  {
+    "worker": 1,
+    "page_number": 26,
+    "file_name": "fallback.pdf",
+    "duration": 15.19,
+    "char_count": 6513
+  },
+  {
+    "worker": 2,
+    "page_number": 27,
+    "file_name": "fallback.pdf",
+    "duration": 19.91,
+    "char_count": 14089
+  },
+  {
+    "worker": 1,
+    "page_number": 28,
+    "file_name": "fallback.pdf",
+    "duration": 19.46,
+    "char_count": 17726
+  }
+]

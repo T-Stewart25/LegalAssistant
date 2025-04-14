@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Voss-1234_MedicalHistory.treatment",
+    "text": "MedicalHistory.treatment: Chiro care, medical marijuana for sleep, MS meds, infusions, pain medication",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.treatment",
+      "field": "",
+      "content": "Chiro care, medical marijuana for sleep, MS meds, infusions, pain medication",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  }
+]

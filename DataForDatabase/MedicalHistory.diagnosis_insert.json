@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Voss-1234_MedicalHistory.diagnosis",
+    "text": "MedicalHistory.diagnosis: Multiple Sclerosis",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.diagnosis",
+      "field": "",
+      "content": "Multiple Sclerosis",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          1
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalHistory.diagnosis",
+    "text": "MedicalHistory.diagnosis: Multiple sclerosis (G35); Relapsing/Remitting Multiple Sclerosis; Parathesias; chronic pain; muscle spasms; and weakness",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.diagnosis",
+      "field": "",
+      "content": "Multiple sclerosis (G35); Relapsing/Remitting Multiple Sclerosis; Parathesias; chronic pain; muscle spasms; and weakness",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          5
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalHistory.diagnosis",
+    "text": "MedicalHistory.diagnosis: MS symptoms",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.diagnosis",
+      "field": "",
+      "content": "MS symptoms",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          6
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalHistory.diagnosis",
+    "text": "MedicalHistory.diagnosis: neuropathy",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.diagnosis",
+      "field": "",
+      "content": "neuropathy",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          17
+        ]
+      }
+    }
+  },
+  {
+    "id": "Voss-1234_MedicalHistory.diagnosis",
+    "text": "MedicalHistory.diagnosis: arm; shoulder; or hand problem",
+    "metadata": {
+      "client_id": "Voss-1234",
+      "section": "MedicalHistory.diagnosis",
+      "field": "",
+      "content": "arm; shoulder; or hand problem",
+      "citation": {
+        "file": "1F_A1001001A23I13B94303C44001.pdf",
+        "pages": [
+          25
+        ]
+      }
+    }
+  }
+]
