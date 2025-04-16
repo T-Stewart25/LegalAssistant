@@ -29,9 +29,11 @@ jobs:
           npm install
           npm run build
 
-      - name: Zip Vite dist folder for deployment
+      - name: Zip contents of dist folder for deployment
         working-directory: ${{ github.workspace }}/UI
-        run: zip -r release.zip dist
+        run: |
+          cd dist
+          zip -r ../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -71,4 +73,4 @@ jobs:
         with:
           app-name: 'LegalAssistant'
           slot-name: 'Production'
-          package: dist
+          package: .
