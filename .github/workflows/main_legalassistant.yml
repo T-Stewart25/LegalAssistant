@@ -71,22 +71,37 @@ jobs:
               </handlers>
               <rewrite>
                 <rules>
+                  <!-- Don't interfere with requests for node-inspector debugging -->
+                  <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
+                    <match url="^server.js\/debug[\/]?" />
+                  </rule>
+
                   <!-- API requests -->
                   <rule name="API Routes" stopProcessing="true">
-                    <match url="api/(.*)" />
+                    <match url="^api/.*" />
                     <action type="Rewrite" url="server/server.js" />
                   </rule>
+
                   <!-- All other requests go to index.html -->
                   <rule name="React Routes" stopProcessing="true">
                     <match url=".*" />
                     <conditions logicalGrouping="MatchAll">
                       <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
                       <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                      <add input="{REQUEST_URI}" pattern="^/api" negate="true" />
                     </conditions>
-                    <action type="Rewrite" url="index.html" />
+                    <action type="Rewrite" url="/" />
                   </rule>
                 </rules>
               </rewrite>
+              <iisnode
+                nodeProcessCommandLine="node"
+                watchedFiles="*.js;node_modules\*;routes\*.js;views\*.jade"
+                loggingEnabled="true"
+                logDirectory="iisnode"
+                debuggingEnabled="true"
+                devErrorsEnabled="true"
+              />
               <staticContent>
                 <mimeMap fileExtension=".json" mimeType="application/json" />
                 <mimeMap fileExtension=".js" mimeType="application/javascript" />
@@ -171,9 +186,9 @@ jobs:
             if [ "$APP_COUNT" -gt "0" ]; then
               echo "Found app in resource group: $RG"
               
-              # Set the WEBSITES_PORT environment variable
-              echo "Setting WEBSITES_PORT to 3001..."
-              az webapp config appsettings set --name LegalAssistant --resource-group $RG --settings WEBSITES_PORT=3001
+              # Set environment variables
+              echo "Setting environment variables..."
+              az webapp config appsettings set --name LegalAssistant --resource-group $RG --settings WEBSITES_PORT=3001 NODE_ENV=production
               
               # Restart the app to ensure no previous instances are running
               echo "Restarting the app to ensure clean deployment..."

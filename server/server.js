@@ -35,11 +35,21 @@ app.use('/api/chat', require('./routes/chat'));
 
 // Serve static files from the React app in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../UI/dist')));
+  // In Azure, the frontend files are in the root directory, not in UI/dist
+  const staticPath = path.join(__dirname, '../');
+  console.log(`Serving static files from: ${staticPath}`);
+  app.use(express.static(staticPath));
   
   // Handle React routing, return all requests to React app
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../UI/dist/index.html'));
+  app.get('*', (req, res, next) => {
+    // Skip API routes
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    
+    const indexPath = path.join(__dirname, '../index.html');
+    console.log(`Serving index.html from: ${indexPath}`);
+    res.sendFile(indexPath);
   });
 }
 
