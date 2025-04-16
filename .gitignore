@@ -1,3 +1,17 @@
 # === Root-Level Ignores ===
 /data
+
+# === UI Project Ignores ===
 /UI/node_modules
+/UI/.env
+/UI/.env.local
+/UI/.env.development.local
+/UI/.env.test.local
+/UI/.env.production.local
+/UI/logs
+/UI/*.log
+/UI/npm-debug.log*
+/UI/yarn-debug.log*
+/UI/yarn-error.log*
+/UI/pnpm-debug.log*
+/UI/.DS_Store
