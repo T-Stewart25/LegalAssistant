@@ -46,8 +46,25 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+console.log(`Attempting to start server on port ${PORT}`);
+
+const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+}).on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. This could be due to another instance of the app running.`);
+    console.error('Using Azure App Service? Try setting WEBSITES_PORT in Application Settings to match your PORT env variable.');
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+// Handle graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+  });
 });
 
 module.exports = app; // For testing purposes

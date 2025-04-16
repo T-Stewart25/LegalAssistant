@@ -159,6 +159,22 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DC7C0311B17F4D51980AE71D30079131 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1BB7FE42FB694DAE8618090659F2DD9E }}
 
+      - name: Configure Azure App Service
+        run: |
+          # Get the resource group name from the app name
+          RESOURCE_GROUP=$(az webapp show --name LegalAssistant --query resourceGroup --output tsv)
+          echo "Resource group: $RESOURCE_GROUP"
+          
+          # Set the WEBSITES_PORT environment variable
+          az webapp config appsettings set --name LegalAssistant --resource-group $RESOURCE_GROUP --settings WEBSITES_PORT=3001
+          
+          # Restart the app to ensure no previous instances are running
+          echo "Restarting the app to ensure clean deployment..."
+          az webapp restart --name LegalAssistant --resource-group $RESOURCE_GROUP
+          
+          # Wait a moment for the restart to complete
+          sleep 30
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
