@@ -161,19 +161,31 @@ jobs:
 
       - name: Configure Azure App Service
         run: |
-          # Get the resource group name from the app name
-          RESOURCE_GROUP=$(az webapp show --name LegalAssistant --query resourceGroup --output tsv)
-          echo "Resource group: $RESOURCE_GROUP"
+          # List all resource groups and find the one containing our app
+          echo "Searching for resource group containing LegalAssistant app..."
+          RESOURCE_GROUPS=$(az group list --query "[].name" -o tsv)
           
-          # Set the WEBSITES_PORT environment variable
-          az webapp config appsettings set --name LegalAssistant --resource-group $RESOURCE_GROUP --settings WEBSITES_PORT=3001
-          
-          # Restart the app to ensure no previous instances are running
-          echo "Restarting the app to ensure clean deployment..."
-          az webapp restart --name LegalAssistant --resource-group $RESOURCE_GROUP
-          
-          # Wait a moment for the restart to complete
-          sleep 30
+          for RG in $RESOURCE_GROUPS; do
+            # Check if this resource group contains our app
+            APP_COUNT=$(az webapp list --resource-group $RG --query "length([?name=='LegalAssistant'])" -o tsv)
+            if [ "$APP_COUNT" -gt "0" ]; then
+              echo "Found app in resource group: $RG"
+              
+              # Set the WEBSITES_PORT environment variable
+              echo "Setting WEBSITES_PORT to 3001..."
+              az webapp config appsettings set --name LegalAssistant --resource-group $RG --settings WEBSITES_PORT=3001
+              
+              # Restart the app to ensure no previous instances are running
+              echo "Restarting the app to ensure clean deployment..."
+              az webapp restart --name LegalAssistant --resource-group $RG
+              
+              # Wait a moment for the restart to complete
+              echo "Waiting for restart to complete..."
+              sleep 30
+              
+              break
+            fi
+          done
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp

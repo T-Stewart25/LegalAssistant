@@ -11,6 +11,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Log environment information for debugging
+console.log('Environment variables:');
+console.log(`- NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`- PORT: ${process.env.PORT}`);
+console.log(`- WEBSITES_PORT: ${process.env.WEBSITES_PORT}`);
+console.log(`- Using port: ${PORT}`);
+
 // Middleware
 app.use(cors());
 app.use(express.json());
