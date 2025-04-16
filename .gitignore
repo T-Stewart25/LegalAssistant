@@ -1,5 +1,6 @@
 # === Root-Level Ignores ===
 /data
+/uploads
 
 # === UI Project Ignores ===
 /UI/node_modules
@@ -15,3 +16,13 @@
 /UI/yarn-error.log*
 /UI/pnpm-debug.log*
 /UI/.DS_Store
+
+# === Server Project Ignores ===
+/server/node_modules
+/server/.env
+/server/.env.local
+/server/.env.development.local
+/server/.env.test.local
+/server/.env.production.local
+/server/logs
+/server/*.log

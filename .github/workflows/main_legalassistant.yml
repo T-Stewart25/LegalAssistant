@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Vite React app to Azure Web App - LegalAssistant
+name: Build and deploy Full Stack app to Azure Web App - LegalAssistant
 
 on:
   push:
@@ -23,23 +23,108 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install and build Vite app
+      - name: Build frontend (Vite React app)
         working-directory: ${{ github.workspace }}/UI
         run: |
           npm install
           npm run build
 
-      - name: Zip contents of dist folder for deployment
-        working-directory: ${{ github.workspace }}/UI
+      - name: Install server dependencies
+        working-directory: ${{ github.workspace }}/server
         run: |
-          cd dist
+          npm install
+
+      - name: Create deployment package
+        run: |
+          # Create a deployment directory
+          mkdir -p deployment
+
+          # Copy the built frontend
+          cp -r ${{ github.workspace }}/UI/dist/* deployment/
+
+          # Create server directory in deployment
+          mkdir -p deployment/server
+
+          # Copy server files (excluding node_modules and other unnecessary files)
+          cp -r ${{ github.workspace }}/server/routes deployment/server/
+          cp -r ${{ github.workspace }}/server/controllers deployment/server/
+          cp -r ${{ github.workspace }}/server/middleware deployment/server/
+          cp -r ${{ github.workspace }}/server/models deployment/server/
+          cp -r ${{ github.workspace }}/server/services deployment/server/
+          cp ${{ github.workspace }}/server/server.js deployment/server/
+          cp ${{ github.workspace }}/server/package.json deployment/server/
+
+          # Create a web.config file for Azure
+          cat > deployment/web.config << 'EOL'
+          <?xml version="1.0" encoding="utf-8"?>
+          <configuration>
+            <system.webServer>
+              <handlers>
+                <add name="iisnode" path="server/server.js" verb="*" modules="iisnode" />
+              </handlers>
+              <rewrite>
+                <rules>
+                  <!-- API requests -->
+                  <rule name="API Routes" stopProcessing="true">
+                    <match url="api/(.*)" />
+                    <action type="Rewrite" url="server/server.js" />
+                  </rule>
+                  <!-- All other requests go to index.html -->
+                  <rule name="React Routes" stopProcessing="true">
+                    <match url=".*" />
+                    <conditions logicalGrouping="MatchAll">
+                      <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                      <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                    </conditions>
+                    <action type="Rewrite" url="index.html" />
+                  </rule>
+                </rules>
+              </rewrite>
+              <staticContent>
+                <mimeMap fileExtension=".json" mimeType="application/json" />
+                <mimeMap fileExtension=".js" mimeType="application/javascript" />
+                <mimeMap fileExtension=".jsx" mimeType="application/javascript" />
+                <mimeMap fileExtension=".css" mimeType="text/css" />
+                <mimeMap fileExtension=".svg" mimeType="image/svg+xml" />
+              </staticContent>
+            </system.webServer>
+          </configuration>
+          EOL
+
+          # Create a package.json in the root for Azure
+          cat > deployment/package.json << 'EOL'
+          {
+            "name": "legal-assistant-app",
+            "version": "1.0.0",
+            "description": "Full stack Legal Assistant application",
+            "main": "server/server.js",
+            "scripts": {
+              "start": "node server/server.js"
+            },
+            "engines": {
+              "node": ">=18.0.0"
+            }
+          }
+          EOL
+
+          # Create a .deployment file for Azure
+          cat > deployment/.deployment << 'EOL'
+          [config]
+          command = npm start
+          EOL
+
+          # Create uploads directory
+          mkdir -p deployment/uploads
+
+          # Zip the deployment package
+          cd deployment
           zip -r ../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: vite-app
-          path: ${{ github.workspace }}/UI/release.zip
+          name: node-app
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +140,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: vite-app
+          name: node-app
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
