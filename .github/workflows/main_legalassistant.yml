@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '22.x'
+          node-version: '18.x'
 
       - name: Build frontend (Vite React app)
         working-directory: ${{ github.workspace }}/UI
@@ -51,7 +51,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/server/models
           mkdir -p ${{ github.workspace }}/server/services
 
-          # Copy server files (excluding node_modules and other unnecessary files)
+          # Copy server files including node_modules
           cp -r ${{ github.workspace }}/server/routes deployment/server/
           cp -r ${{ github.workspace }}/server/controllers deployment/server/
           cp -r ${{ github.workspace }}/server/middleware deployment/server/
@@ -59,6 +59,7 @@ jobs:
           cp -r ${{ github.workspace }}/server/services deployment/server/
           cp ${{ github.workspace }}/server/server.js deployment/server/
           cp ${{ github.workspace }}/server/package.json deployment/server/
+          cp -r ${{ github.workspace }}/server/node_modules deployment/server/
 
           # Create a web.config file for Azure
           cat > deployment/web.config << 'EOL'
