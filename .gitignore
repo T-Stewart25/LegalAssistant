@@ -50,10 +50,8 @@ out
 
 # === UI-Specific Ignores ===
 /DisabilityLawFirm/UI/node_modules/
-/DisabilityLawFirm/UI/dist/
 /DisabilityLawFirm/UI/.env
 /DisabilityLawFirm/UI/.env.*
 
 # Optional: Vitepress (if used)
-/DisabilityLawFirm/UI/.vitepress/dist
 /DisabilityLawFirm/UI/.vitepress/cache
