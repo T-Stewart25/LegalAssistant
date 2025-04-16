@@ -45,6 +45,12 @@ jobs:
           # Create server directory in deployment
           mkdir -p deployment/server
 
+          # Create empty directories if they don't exist
+          mkdir -p ${{ github.workspace }}/server/controllers
+          mkdir -p ${{ github.workspace }}/server/middleware
+          mkdir -p ${{ github.workspace }}/server/models
+          mkdir -p ${{ github.workspace }}/server/services
+
           # Copy server files (excluding node_modules and other unnecessary files)
           cp -r ${{ github.workspace }}/server/routes deployment/server/
           cp -r ${{ github.workspace }}/server/controllers deployment/server/
