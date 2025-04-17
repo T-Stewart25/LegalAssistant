@@ -1,0 +1,19 @@
+[Unit]
+Description=Legal Assistant Application
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/LegalAssistant
+ExecStart=/home/ubuntu/LegalAssistant/start-app.sh
+ExecStop=/home/ubuntu/LegalAssistant/stop-app.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=legal-assistant
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
