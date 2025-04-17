@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAppContext } from '../context/AppContext';
 import './FileUploadForm.css';
 
@@ -10,12 +11,32 @@ function FileUploadForm() {
   const [section, setSection] = useState('F'); // Default to 'F' as requested
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const sections = ["A", "B", "D", "E", "F"]; // Add other sections if needed
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
     setUploadSuccess(false); // Reset success message when a new file is selected
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setSelectedFile(e.dataTransfer.files[0]);
+      setUploadSuccess(false);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -58,115 +79,266 @@ function FileUploadForm() {
     }
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 }
+    }
+  };
+
+  const fileItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { type: "spring", stiffness: 200, damping: 20 }
+    },
+    exit: { 
+      opacity: 0, 
+      x: 20, 
+      transition: { duration: 0.2 } 
+    }
+  };
+
   return (
-    <div className="file-upload-form-container">
-      <h3>Upload Client Document</h3>
-      <form onSubmit={handleSubmit} className="file-upload-form">
-        <div className="form-group">
+    <motion.div 
+      className="file-upload-form-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h3 variants={itemVariants}>Upload Client Document</motion.h3>
+      <motion.form 
+        onSubmit={handleSubmit} 
+        className="file-upload-form"
+        variants={containerVariants}
+      >
+        <motion.div className="form-group" variants={itemVariants}>
           <label htmlFor="lastName">Client Last Name:</label>
-          <input
+          <motion.input
             type="text"
             id="lastName"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
+            whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(56, 178, 172, 0.2)" }}
           />
-        </div>
-        <div className="form-group">
+        </motion.div>
+        
+        <motion.div className="form-group" variants={itemVariants}>
           <label htmlFor="ssn">Social Security Number:</label>
-          <input
+          <motion.input
             type="text" // Use "password" for masking, but validation needed
             id="ssn"
             value={ssn}
             onChange={(e) => setSsn(e.target.value)}
             required
+            whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(56, 178, 172, 0.2)" }}
             // Add pattern for SSN format if desired: pattern="\d{3}-\d{2}-\d{4}"
           />
-        </div>
-        <div className="form-group">
+        </motion.div>
+        
+        <motion.div className="form-group" variants={itemVariants}>
           <label htmlFor="section">Data Section:</label>
-          <select
+          <motion.select
             id="section"
             value={section}
             onChange={(e) => setSection(e.target.value)}
             required
+            whileFocus={{ scale: 1.01, boxShadow: "0 0 0 3px rgba(56, 178, 172, 0.2)" }}
           >
             {sections.map(sec => (
               <option key={sec} value={sec}>Section {sec}</option>
             ))}
-          </select>
-        </div>
-        <div className="form-group">
+          </motion.select>
+        </motion.div>
+        
+        <motion.div 
+          className="form-group" 
+          variants={itemVariants}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
           <label htmlFor="fileUpload">Select File:</label>
-          <input
+          <motion.input
             type="file"
             id="fileUpload"
             onChange={handleFileChange}
             required
+            style={{ 
+              borderColor: isDragging ? 'var(--color-secondary)' : undefined,
+              backgroundColor: isDragging ? 'rgba(56, 178, 172, 0.05)' : undefined
+            }}
           />
-        </div>
-        {selectedFile && (
-          <div className="file-info">
-            Selected file: {selectedFile.name}
-          </div>
-        )}
-        <button 
+        </motion.div>
+        
+        <AnimatePresence>
+          {selectedFile && (
+            <motion.div 
+              className="file-info"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            >
+              <i className="fas fa-file-alt" style={{ marginRight: '8px' }}></i>
+              Selected file: {selectedFile.name}
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        <motion.button 
           type="submit" 
           className="upload-button" 
           disabled={loading.files || !selectedFile}
+          variants={itemVariants}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
         >
-          {loading.files ? 'Uploading...' : 'Upload Document'}
-        </button>
+          {loading.files ? (
+            <>
+              <i className="fas fa-spinner fa-spin" style={{ marginRight: '8px' }}></i>
+              Uploading...
+            </>
+          ) : (
+            <>
+              <i className="fas fa-cloud-upload-alt" style={{ marginRight: '8px' }}></i>
+              Upload Document
+            </>
+          )}
+        </motion.button>
         
-        {uploadSuccess && (
-          <div className="success-message">
-            File uploaded successfully!
-          </div>
-        )}
+        <AnimatePresence>
+          {uploadSuccess && (
+            <motion.div 
+              className="success-message"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ type: "spring" }}
+            >
+              <i className="fas fa-check-circle" style={{ marginRight: '8px' }}></i>
+              File uploaded successfully!
+            </motion.div>
+          )}
+        </AnimatePresence>
         
-        {error.files && (
-          <div className="error-message">
-            Error: {error.files}
-          </div>
-        )}
-      </form>
+        <AnimatePresence>
+          {error.files && (
+            <motion.div 
+              className="error-message"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ type: "spring" }}
+            >
+              <i className="fas fa-exclamation-circle" style={{ marginRight: '8px' }}></i>
+              Error: {error.files}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.form>
       
       {/* Display list of uploaded files */}
-      <div className="uploaded-files-section">
-        <h4>Uploaded Files</h4>
-        <button 
-          onClick={() => fetchFiles()} 
-          className="refresh-button"
-          disabled={loading.files}
-        >
-          Refresh List
-        </button>
-        <div className="files-list">
-          {files.length === 0 ? (
-            <p>No files uploaded yet.</p>
-          ) : (
-            <ul>
-              {files.map((file) => (
-                <li key={file.name} className="file-item">
-                  <span className="file-name">{file.name}</span>
-                  <span className="file-size">
-                    {Math.round(file.size / 1024)} KB
-                  </span>
-                  <button 
-                    onClick={() => deleteFile(file.name)}
-                    className="delete-button"
-                    disabled={loading.files}
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-          {loading.files && <p>Loading files...</p>}
+      <motion.div 
+        className="uploaded-files-section"
+        variants={containerVariants}
+      >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <motion.h4 variants={itemVariants}>Uploaded Files</motion.h4>
+          <motion.button 
+            onClick={() => fetchFiles()} 
+            className="refresh-button"
+            disabled={loading.files}
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <i className="fas fa-sync-alt" style={{ marginRight: '5px' }}></i>
+            Refresh
+          </motion.button>
         </div>
-      </div>
-    </div>
+        
+        <motion.div 
+          className="files-list"
+          variants={containerVariants}
+        >
+          {files.length === 0 ? (
+            <motion.p 
+              variants={itemVariants}
+              style={{ textAlign: 'center', color: 'var(--color-gray-500)' }}
+            >
+              <i className="fas fa-folder-open" style={{ fontSize: '1.5em', display: 'block', margin: '10px auto' }}></i>
+              No files uploaded yet.
+            </motion.p>
+          ) : (
+            <motion.ul variants={containerVariants}>
+              <AnimatePresence>
+                {files.map((file) => (
+                  <motion.li 
+                    key={file.name} 
+                    className="file-item"
+                    variants={fileItemVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    layout
+                  >
+                    <span className="file-name">
+                      <i className="fas fa-file-alt" style={{ marginRight: '8px' }}></i>
+                      {file.name}
+                    </span>
+                    <span className="file-size">
+                      {Math.round(file.size / 1024)} KB
+                    </span>
+                    <motion.button 
+                      onClick={() => deleteFile(file.name)}
+                      className="delete-button"
+                      disabled={loading.files}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <i className="fas fa-trash-alt"></i>
+                    </motion.button>
+                  </motion.li>
+                ))}
+              </AnimatePresence>
+            </motion.ul>
+          )}
+          {loading.files && (
+            <motion.div 
+              style={{ 
+                textAlign: 'center', 
+                padding: '20px',
+                color: 'var(--color-gray-500)'
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <i className="fas fa-spinner fa-spin" style={{ fontSize: '1.5em', marginBottom: '10px', display: 'block' }}></i>
+              <p>Loading files...</p>
+            </motion.div>
+          )}
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
 
