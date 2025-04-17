@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Assistant - Fallback Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid #007bff;
+    }
+    h1 {
+      color: #007bff;
+      margin-top: 0;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .success {
+      color: #28a745;
+    }
+    .warning {
+      color: #ffc107;
+    }
+    .error {
+      color: #dc3545;
+    }
+    code {
+      background-color: #f8f9fa;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .btn:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Legal Assistant - Fallback Page</h1>
+    <p>This is a fallback page that indicates your Azure App Service is partially working.</p>
+  </header>
+
+  <div class="card">
+    <h2 class="success">✅ Static File Serving is Working!</h2>
+    <p>If you can see this page, it means your static files are being served correctly.</p>
+    <p>However, your main React application may still have issues.</p>
+  </div>
+
+  <div class="card">
+    <h2>Diagnostic Information</h2>
+    <ul>
+      <li><strong>Current URL:</strong> <span id="current-url"></span></li>
+      <li><strong>Time:</strong> <span id="current-time"></span></li>
+      <li><strong>User Agent:</strong> <span id="user-agent"></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Troubleshooting Steps</h2>
+    <ol>
+      <li>Check if your React app's <code>index.html</code> file is in the correct location</li>
+      <li>Verify your <code>web.config</code> is correctly configured</li>
+      <li>Ensure your server is running properly</li>
+      <li>Check the Azure App Service logs for errors</li>
+      <li>Run the diagnostic script: <code>node diagnostic.js</code></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Quick Links</h2>
+    <a href="/health.html" class="btn">Health Check Page</a>
+    <a href="/api/health" class="btn">API Health Check</a>
+    <a href="https://portal.azure.com" class="btn" target="_blank">Azure Portal</a>
+  </div>
+
+  <script>
+    // Fill in diagnostic information
+    document.getElementById('current-url').textContent = window.location.href;
+    document.getElementById('current-time').textContent = new Date().toLocaleString();
+    document.getElementById('user-agent').textContent = navigator.userAgent;
+
+    // Check if API is accessible
+    fetch('/api/health')
+      .then(response => response.json())
+      .then(data => {
+        const apiCard = document.createElement('div');
+        apiCard.className = 'card';
+        apiCard.innerHTML = `
+          <h2 class="success">✅ API Server is Running!</h2>
+          <p>The API server responded successfully.</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+        document.body.insertBefore(apiCard, document.querySelector('.card:last-child'));
+      })
+      .catch(error => {
+        const apiCard = document.createElement('div');
+        apiCard.className = 'card';
+        apiCard.innerHTML = `
+          <h2 class="error">❌ API Server Not Accessible</h2>
+          <p>Could not connect to the API server. This could indicate that your Node.js server is not running properly.</p>
+          <p>Error: ${error.message}</p>
+        `;
+        document.body.insertBefore(apiCard, document.querySelector('.card:last-child'));
+      });
+  </script>
+</body>
+</html>
