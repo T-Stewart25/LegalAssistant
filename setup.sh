@@ -9,10 +9,18 @@ echo "Setting up Legal Assistant Application..."
 echo "Installing root dependencies..."
 npm install
 
-# Install UI dependencies
+# Install UI dependencies with clean installation
 echo "Installing UI dependencies..."
 cd UI
+echo "Cleaning previous installations..."
+rm -rf node_modules package-lock.json
+echo "Installing dependencies including framer-motion..."
 npm install
+echo "Verifying framer-motion installation..."
+if ! grep -q "framer-motion" package.json; then
+  echo "Adding framer-motion dependency..."
+  npm install framer-motion --save
+fi
 cd ..
 
 # Install server dependencies
@@ -33,3 +41,6 @@ echo ""
 echo "Or to start them separately:"
 echo "npm run dev:ui     # Frontend only"
 echo "npm run dev:server # Backend only"
+echo ""
+echo "Note: If you encounter any build issues, try running:"
+echo "cd UI && rm -rf node_modules package-lock.json && npm install && cd .."

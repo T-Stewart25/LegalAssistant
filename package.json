@@ -6,10 +6,12 @@
   "scripts": {
     "start": "node server/server.js",
     "install-all": "npm install && cd UI && npm install && cd ../server && npm install",
+    "clean-install": "npm install && cd UI && rm -rf node_modules package-lock.json && npm install && cd ../server && npm install",
     "build": "cd UI && npm run build",
     "dev:ui": "cd UI && npm run dev",
     "dev:server": "cd server && npm run dev",
-    "dev": "concurrently \"npm run dev:ui\" \"npm run dev:server\""
+    "dev": "concurrently \"npm run dev:ui\" \"npm run dev:server\"",
+    "setup": "bash setup.sh"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
