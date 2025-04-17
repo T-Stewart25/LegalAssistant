@@ -9,6 +9,21 @@ This guide provides instructions for running the Legal Assistant application on 
 - Git installed (for cloning the repository)
 - Basic knowledge of Linux commands
 
+### Installing Node.js
+
+If you don't have Node.js installed on your VM, you can use the provided installation script:
+
+```bash
+./install-nodejs.sh
+```
+
+This script will:
+- Detect your Linux distribution
+- Install Node.js v18.x and npm using the appropriate package manager
+- Verify the installation
+
+The script supports Ubuntu/Debian, CentOS/RHEL, and Alpine Linux. For other distributions, it will attempt to install Node.js using NVM (Node Version Manager).
+
 ## Setup Instructions
 
 1. **Clone the repository**

@@ -18,6 +18,26 @@ echo "Backend port: $BACKEND_PORT"
 echo "Frontend port: $FRONTEND_PORT"
 echo ""
 
+# Check for Node.js and npm installation
+if ! command -v node >/dev/null 2>&1; then
+  echo "Error: Node.js is not installed or not in PATH"
+  echo "Please install Node.js (v18.0.0 or higher) before running this script."
+  echo "Visit https://nodejs.org/en/download/ for installation instructions."
+  exit 1
+fi
+
+echo "Node.js version: $(node -v)"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Error: npm is not installed or not in PATH"
+  echo "npm is required to run this application."
+  echo "It should be included with Node.js installation."
+  exit 1
+fi
+
+echo "npm version: $(npm -v)"
+echo ""
+
 # Function to check if a port is in use
 is_port_in_use() {
   if command -v lsof >/dev/null 2>&1; then
@@ -49,58 +69,239 @@ fi
 if [ ! -d "node_modules" ] || [ ! -d "UI/node_modules" ] || [ ! -d "server/node_modules" ]; then
   echo "Installing dependencies..."
   npm run install-all
+  
+  # Check if installation was successful
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to install dependencies."
+    echo "Trying to install dependencies individually..."
+    
+    # Try to install dependencies individually
+    echo "Installing root dependencies..."
+    npm install
+    
+    echo "Installing UI dependencies..."
+    cd UI && npm install && cd ..
+    
+    echo "Installing server dependencies..."
+    cd server && npm install && cd ..
+    
+    # Check if any of the node_modules directories exist now
+    if [ ! -d "node_modules" ] || [ ! -d "UI/node_modules" ] || [ ! -d "server/node_modules" ]; then
+      echo "Error: Failed to install dependencies. Please install them manually."
+      exit 1
+    fi
+  fi
 fi
 
 # Build the frontend
 echo "Building frontend..."
 npm run build
 
+# Check if build was successful
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to build the frontend."
+  echo "Trying to build directly..."
+  
+  cd UI && npm run build && cd ..
+  
+  # Check if the build directory exists
+  if [ ! -d "UI/dist" ]; then
+    echo "Error: Failed to build the frontend. Please build it manually."
+    echo "You can try: cd UI && npm run build"
+    exit 1
+  fi
+fi
+
 # Set environment variables for the server
 export NODE_ENV=production
 export PORT=$BACKEND_PORT
 
+# Function to display logs
+display_log() {
+  local log_file=$1
+  local lines=${2:-20}
+  
+  if [ -f "$log_file" ]; then
+    echo "Last $lines lines of $log_file:"
+    tail -n $lines "$log_file"
+  else
+    echo "Log file $log_file not found."
+  fi
+}
+
 # Start the backend server in the background
 echo "Starting backend server on port $BACKEND_PORT..."
+
+# Check if server.js exists
+if [ ! -f "server/server.js" ]; then
+  echo "Error: server/server.js not found. Make sure you're in the correct directory."
+  exit 1
+fi
+
+# Check if required modules are installed
+if [ ! -d "server/node_modules" ]; then
+  echo "Error: server/node_modules directory not found. Installing server dependencies..."
+  cd server && npm install && cd ..
+  
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to install server dependencies."
+    exit 1
+  fi
+fi
+
+# Start the server with detailed error handling
 node server/server.js > logs/backend.log 2>&1 &
 BACKEND_PID=$!
 echo $BACKEND_PID > logs/backend.pid
 echo "Backend server started with PID: $BACKEND_PID"
 
 # Wait a moment for the server to start
-sleep 2
+echo "Waiting for backend server to initialize..."
+sleep 5
 
 # Check if the server started successfully
 if ! ps -p $BACKEND_PID > /dev/null; then
-  echo "Error: Backend server failed to start. Check logs/backend.log for details."
+  echo "Error: Backend server failed to start."
+  echo "Displaying backend logs for troubleshooting:"
+  display_log "logs/backend.log" 50
+  echo ""
+  echo "Possible issues:"
+  echo "1. Missing dependencies - Try running 'cd server && npm install'"
+  echo "2. Port conflict - Make sure port $BACKEND_PORT is not in use"
+  echo "3. Configuration issues - Check server/.env file"
+  echo ""
+  exit 1
+fi
+
+# Verify the server is responding
+if command -v curl >/dev/null 2>&1; then
+  echo "Testing backend server..."
+  HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:$BACKEND_PORT/api/health 2>/dev/null)
+  
+  if [ "$HTTP_STATUS" -lt 200 ] || [ "$HTTP_STATUS" -ge 400 ]; then
+    echo "Warning: Backend server is running but not responding correctly (HTTP $HTTP_STATUS)."
+    echo "The server may still be starting up or may have configuration issues."
+    echo "Continuing startup process, but you may need to check the logs if problems persist."
+  else
+    echo "Backend server is responding correctly (HTTP $HTTP_STATUS)."
+  fi
+fi
+
+# Check if the frontend build directory exists
+if [ ! -d "UI/dist" ]; then
+  echo "Error: UI/dist directory not found. The frontend may not have been built correctly."
+  echo "Stopping backend server..."
+  kill $BACKEND_PID
   exit 1
 fi
 
 # Serve the frontend using a simple HTTP server
 echo "Starting frontend server on port $FRONTEND_PORT..."
-if command -v npx >/dev/null 2>&1; then
-  # Use Vite's preview server to serve the built frontend
+
+# Try different methods to serve the frontend
+FRONTEND_SERVER_STARTED=false
+
+# Method 1: Use Vite's preview server
+if command -v npx >/dev/null 2>&1 && [ "$FRONTEND_SERVER_STARTED" = false ]; then
+  echo "Trying to start frontend using Vite preview..."
   cd UI && npx vite preview --host $HOST --port $FRONTEND_PORT > ../logs/frontend.log 2>&1 &
   FRONTEND_PID=$!
   cd ..
-else
-  # Fallback to a simple HTTP server if npx is not available
-  if command -v python3 >/dev/null 2>&1; then
-    cd UI/dist && python3 -m http.server $FRONTEND_PORT --bind $HOST > ../../logs/frontend.log 2>&1 &
-    FRONTEND_PID=$!
-    cd ../..
-  elif command -v python >/dev/null 2>&1; then
-    cd UI/dist && python -m SimpleHTTPServer $FRONTEND_PORT > ../../logs/frontend.log 2>&1 &
-    FRONTEND_PID=$!
-    cd ../..
+  
+  # Wait a moment for the server to start
+  sleep 3
+  
+  # Check if the server started successfully
+  if ps -p $FRONTEND_PID > /dev/null; then
+    echo "Frontend server started with Vite preview (PID: $FRONTEND_PID)"
+    FRONTEND_SERVER_STARTED=true
   else
-    echo "Error: Cannot start frontend server. Please install Node.js with npx or Python."
-    kill $BACKEND_PID
-    exit 1
+    echo "Failed to start frontend with Vite preview."
   fi
 fi
 
+# Method 2: Use Python 3's HTTP server
+if command -v python3 >/dev/null 2>&1 && [ "$FRONTEND_SERVER_STARTED" = false ]; then
+  echo "Trying to start frontend using Python 3 HTTP server..."
+  cd UI/dist && python3 -m http.server $FRONTEND_PORT --bind $HOST > ../../logs/frontend.log 2>&1 &
+  FRONTEND_PID=$!
+  cd ../..
+  
+  # Wait a moment for the server to start
+  sleep 3
+  
+  # Check if the server started successfully
+  if ps -p $FRONTEND_PID > /dev/null; then
+    echo "Frontend server started with Python 3 HTTP server (PID: $FRONTEND_PID)"
+    FRONTEND_SERVER_STARTED=true
+  else
+    echo "Failed to start frontend with Python 3 HTTP server."
+  fi
+fi
+
+# Method 3: Use Python 2's SimpleHTTPServer
+if command -v python >/dev/null 2>&1 && [ "$FRONTEND_SERVER_STARTED" = false ]; then
+  echo "Trying to start frontend using Python 2 SimpleHTTPServer..."
+  cd UI/dist && python -m SimpleHTTPServer $FRONTEND_PORT > ../../logs/frontend.log 2>&1 &
+  FRONTEND_PID=$!
+  cd ../..
+  
+  # Wait a moment for the server to start
+  sleep 3
+  
+  # Check if the server started successfully
+  if ps -p $FRONTEND_PID > /dev/null; then
+    echo "Frontend server started with Python 2 SimpleHTTPServer (PID: $FRONTEND_PID)"
+    FRONTEND_SERVER_STARTED=true
+  else
+    echo "Failed to start frontend with Python 2 SimpleHTTPServer."
+  fi
+fi
+
+# Method 4: Use Node.js http-server if available
+if command -v npx >/dev/null 2>&1 && [ "$FRONTEND_SERVER_STARTED" = false ]; then
+  echo "Trying to start frontend using npx http-server..."
+  cd UI/dist && npx http-server -p $FRONTEND_PORT --cors -a $HOST > ../../logs/frontend.log 2>&1 &
+  FRONTEND_PID=$!
+  cd ../..
+  
+  # Wait a moment for the server to start
+  sleep 3
+  
+  # Check if the server started successfully
+  if ps -p $FRONTEND_PID > /dev/null; then
+    echo "Frontend server started with http-server (PID: $FRONTEND_PID)"
+    FRONTEND_SERVER_STARTED=true
+  else
+    echo "Failed to start frontend with http-server."
+  fi
+fi
+
+# Check if any method succeeded
+if [ "$FRONTEND_SERVER_STARTED" = false ]; then
+  echo "Error: Failed to start frontend server using any available method."
+  echo "Please install Node.js with npx or Python to serve the frontend."
+  echo "Stopping backend server..."
+  kill $BACKEND_PID
+  exit 1
+fi
+
+# Save the PID for later
 echo $FRONTEND_PID > logs/frontend.pid
-echo "Frontend server started with PID: $FRONTEND_PID"
+
+# Verify the frontend server is responding
+if command -v curl >/dev/null 2>&1; then
+  echo "Testing frontend server..."
+  HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:$FRONTEND_PORT 2>/dev/null)
+  
+  if [ "$HTTP_STATUS" -lt 200 ] || [ "$HTTP_STATUS" -ge 400 ]; then
+    echo "Warning: Frontend server is running but not responding correctly (HTTP $HTTP_STATUS)."
+    echo "The server may still be starting up or may have configuration issues."
+    echo "Continuing startup process, but you may need to check the logs if problems persist."
+  else
+    echo "Frontend server is responding correctly (HTTP $HTTP_STATUS)."
+  fi
+fi
 
 # Get the server's IP address
 if command -v hostname >/dev/null 2>&1; then
